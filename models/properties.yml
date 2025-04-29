@@ -1,0 +1,10 @@
+models:
+  - name: "trial"
+    config:
+      materialized: 'table'
+  - name: "trial2"
+    config:
+      materialized: 'view'
+  - name: "trial3"
+    config:
+      materialized: 'table'
