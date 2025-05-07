@@ -1,10 +1,47 @@
+sources:
+  - name: "Ronu_sources"
+    database: DB_ECOM
+    schema: SC_ECOMM
+    tables:
+      - name: CUSTOMER_DETAILS
+  - name: "Ronu_Sources_2"
+    database: DB_ECOM
+    schema: DBT_RMOHANTY
+    tables:
+      - name: TRIAL2
+  - name: "Ronu_Sources_3"
+    database: DB_ECOM
+    schema: SC_ECOMM
+    tables:
+      - name: RAW_COUNTRY
+      - name: RAW_USERS
+  - name: "Ronu_Source_Revenue_date"
+    database: REVENUE_HISTORY
+    schema: RAW_SCHEMA
+    tables:
+      - name: REVENUE_HISTORY_DATES
+      
+  
 models:
   - name: "trial"
     config:
       materialized: 'table'
   - name: "trial2"
     config:
-      materialized: 'view'
-  - name: "trial3"
-    config:
       materialized: 'table'
+  - name: "trial_3"
+    config:
+      materialized: 'view'
+  - name: "src_users"
+    config:
+      materialized: 'view'
+  - name: "view_on_seeds_customer_name"
+    config:
+      materialized: 'view'
+  - name: "date_revenue_inr_conversion"
+    config:
+      materialized: 'ephemeral'
+
+
+
+
