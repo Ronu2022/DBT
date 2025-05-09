@@ -5,3 +5,15 @@ seeds:
       column_types:
         CUSTOMER_ID: string
         ACCOUNT_BALANCE: integer
+  - name: house_area
+    config:
+     full_refresh: true
+     column_types:
+      House_Name : string
+      Area: float
+
+
+
+
+
+

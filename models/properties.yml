@@ -20,8 +20,8 @@ sources:
     schema: RAW_SCHEMA
     tables:
       - name: REVENUE_HISTORY_DATES
-      
-  
+
+ 
 models:
   - name: "trial"
     config:
@@ -41,6 +41,9 @@ models:
   - name: "date_revenue_inr_conversion"
     config:
       materialized: 'ephemeral'
+  - name: "housing_area"
+    config:
+      materialized: 'view'
 
 
 

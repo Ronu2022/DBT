@@ -5,6 +5,8 @@
 {{true}}
 
 {% raw %}
+
+
 --------------------------------------------------------------------------------------------------------------------------------- {% end raw %}
 -- ** TAGS IN JINJA ** 
 
@@ -80,6 +82,13 @@ Divisible!
 {% endif %} -- mark two balnk spaces: what I need is remove sapces after the tag for first and the spaces after the tag for the2nd
 
 
+{%- set a = 14 -%}
+{%- if (a % 2) == 0  -%}
+Divisible
+{%- endif -%}
+
+
+
 {% set var2 = 10 -%}
 {% if (var2 % 2) == 0 -%}
 Divisible!
@@ -90,6 +99,12 @@ Divisible!
 {% if y == 3 -%}
 y is equal to 3
 {% endif %} -- conditions matched 
+
+
+{%- set y  =  4 -%}
+{%- if y == 4 -%}
+y is equal to 4!
+{%- endif -%}
 
 
 {% set y = 5 -%}
@@ -161,6 +176,31 @@ The fruit is not present.
 {% endif -%}
 
 
+{% set fruits = ["apple","banana"] -%}
+{%- set ns = namespace(found = true) -%}
+{% for n in fruits -%}
+    {% if n == "banana" -%}
+        {% set ns.found = true -%}
+    {% endif -%}
+{% endfor -%}
+
+
+
+{% set fruits = ["apple","banana"] -%}
+{%- set ns = namespace(found = true) -%}
+{%- for f in fruits -%}
+    {%- if f == "banana" -%}
+        {%- set ns.found = true -%}
+    {%- else -%}
+        {%- set ns.found = false -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- if ns.found == true -%}
+Banana in the list!
+    {%- else -%}
+        Banana not in the list!
+{%- endif -%}
+
 
 {# LOOP.index#}
 
@@ -181,6 +221,14 @@ Ronu has not worked with us.
 {% for na in names -%}
     {{loop.index}}: {{na}} -- index starts from 1
 {% endfor %}
+
+
+{%- set a = ["ajay","ronu","vishal"] -%}
+{%- for n in a -%}
+    {{loop.index}}: {{n}}
+{%- endfor -%}
+
+
 
 
 {# LOOP.index0#}
