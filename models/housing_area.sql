@@ -1,1 +1,1 @@
-SELECT * FROM {{ref('house_area')}};
+select * from {{ref('house_area')}}

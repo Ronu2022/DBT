@@ -20,31 +20,45 @@ sources:
     schema: RAW_SCHEMA
     tables:
       - name: REVENUE_HISTORY_DATES
+  - name: "payments_types_sources"
+    database: REVENUE_HISTORY
+    schema: PUBLIC
+    tables:
+      - name: customer_payments
+  - name: "spring_loan_applications"
+    database: RAW_SPRING_RECORDS
+    schema: RAW_DATA
+    tables:
+      - name: raw_loan_applications
+      - name: raw_loan_applications_2
+      - name: raw_loan_applications_3
+      - name: raw_customer_profiles_3
 
- 
+
 models:
   - name: "trial"
     config:
-      materialized: 'table'
+      materialized: "table"
   - name: "trial2"
     config:
-      materialized: 'table'
+      materialized: "table"
   - name: "trial_3"
     config:
-      materialized: 'view'
+      materialized: "view"
   - name: "src_users"
     config:
-      materialized: 'view'
+      materialized: "view"
   - name: "view_on_seeds_customer_name"
     config:
-      materialized: 'view'
+      materialized: "view"
   - name: "date_revenue_inr_conversion"
     config:
-      materialized: 'ephemeral'
+      materialized: "ephemeral"
   - name: "housing_area"
     config:
-      materialized: 'view'
-
-
+      materialized: "view"
+  - name: "customer_payments_raw"
+    config:
+      materialized: "view"
 
 
