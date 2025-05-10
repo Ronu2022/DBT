@@ -59,3 +59,5 @@ Select
     trim(l.notes) as notes
 from source_data_raw_customer_profile as c
 left join source_data_raw_loan_cleaned as l on c.customer_id = l.customer_id
+
+-- o/p is okay
