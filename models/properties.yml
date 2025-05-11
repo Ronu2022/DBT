@@ -33,6 +33,9 @@ sources:
       - name: raw_loan_applications_2
       - name: raw_loan_applications_3
       - name: raw_customer_profiles_3
+      - name: raw_loan_applications_4
+      - name: raw_evergreen_applications
+      
 
 
 models:
