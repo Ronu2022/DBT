@@ -28,4 +28,4 @@ with source_table as
     select *, 'main' as source_table from {{ main_table }}
 )
 {% endif %}
-select * from source_table
+select * from source_table ----
