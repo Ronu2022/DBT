@@ -35,6 +35,14 @@ sources:
       - name: raw_customer_profiles_3
       - name: raw_loan_applications_4
       - name: raw_evergreen_applications
+  - name: "Raw_Inserted_Layer"
+    database: RAW_SPRING_RECORDS
+    schema: RAW_DATA
+    tables:
+      - name: RAW_LOAN_APPLICATIONS_6
+      - name: RAW_CUSTOMER_PROFILES_6
+      - name: REVENUE_HISTORY_DATES_6
+      - name: raw_loan_applications_7
       
 
 
@@ -63,5 +71,37 @@ models:
   - name: "customer_payments_raw"
     config:
       materialized: "view"
+  - name: "test_unique_not_null"
+    config:
+      materialized: "view"
+    columns:
+      - name: application_id
+        tests:
+        - unique
+        - not_null
+  - name: "test_accepted_values"
+    config:
+      materialized: "view"
+    columns:
+      - name: application_status
+        tests:
+          - accepted_values:
+              values: ['approved','pending','rejected']
+      - name: CUSTOMER_ID
+        tests:
+          - relationships:
+              to: ref('test_relationship_reference_model')
+              field: customer_id
+  - name: "RAW_CUSTOMER_PROFILES_6"
+    config:
+      materialized: "view"
+    columns:
+      - name: LOAN_AMOUNT
+        tests:
+        - unit_testing
+
+
+          
+          
 
 
